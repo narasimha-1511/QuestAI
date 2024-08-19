@@ -94,7 +94,7 @@ export function FilesProvider({ children }) {
   };
 
   return (
-    <FilesContext.Provider value={{ files, setFiles ,  createFile ,removeFile, updateFile , loading , setProjectId , projectId, projectName , fetchFiles , setProjectId}}>
+    <FilesContext.Provider value={{ files, setFiles ,  createFile ,removeFile, updateFile , loading , setProjectId , projectId, projectName , fetchFiles }}>
       {children}
     </FilesContext.Provider>
   );

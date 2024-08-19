@@ -7,7 +7,7 @@ const useLogout = (setLoggedIn, setLoadingAuth, navigate) => {
       const response = await apiInstance.post('/api/auth/logout');
       if (response.status === 200) {
         setLoggedIn(false);
-        navigate('/login');
+        navigate('/');
       }
     } catch (error) {
       console.error('Logout failed:', error);

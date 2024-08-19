@@ -1,10 +1,10 @@
 import React, { useState , useEffect} from 'react'
-import Header from '../components/Home/home-header'
+import Header from '../components/home/home-header'
 import Button from '../components/shared/Button'
 import Add from '../assets/icons/add.svg'
-import ModalHome from '../components/Home/modal-home'
-import NoProjects from '../components/Home/no-projects'
-import Projects from '../components/Home/projects'
+import ModalHome from '../components/home/modal-home'
+import NoProjects from '../components/home/no-projects'
+import Projects from '../components/home/projects'
 import Spinner from '../components/shared/Spinner'
 import { useProjectsContext } from '../context/projects-context';
 

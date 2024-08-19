@@ -1,6 +1,6 @@
 import React from 'react'
-import Design from '../components/Login/left-design'
-import Login from '../components/Login/login'
+import Design from '../components/login/left-design'
+import Login from '../components/login/login'
 
 const LoginPage = () => {
   return (

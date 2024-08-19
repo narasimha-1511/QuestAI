@@ -1,6 +1,6 @@
 export const ROUTE_MAP = {
     // Authentication
-    LOGIN: "/login",
+    LOGIN: "/",
     SIGNUP: "/signup",
     LOGOUT: "/logout",
 
