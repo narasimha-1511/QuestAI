@@ -2,7 +2,7 @@ import { useState } from "react";
 import { apiInstance } from "../utils/api-instance";
 import { useNavigate } from "react-router-dom";
 
-const useSignup = (setLoggedIn, setEmail, setUserName) => {
+const useSignup = (setLoggedIn) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -16,11 +16,9 @@ const useSignup = (setLoggedIn, setEmail, setUserName) => {
       });
 
       if (response.data?.error) {
-        throw new Error(response.data.error);
+        return response.data.error;
       }
 
-      setUserName(response.data.user.fullName);
-      setEmail(response.data.user.email);
       setLoggedIn(true);
       navigate("/home");
       return true;

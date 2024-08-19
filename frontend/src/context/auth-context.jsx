@@ -20,11 +20,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
 
   const { login, loading: loginLoading } = useLogin(setLoggedIn);
-  const { signup, loading: signupLoading } = useSignup(
-    setLoggedIn,
-    setEmail,
-    setUserName,
-  );
+  const { signup, loading: signupLoading } = useSignup(setLoggedIn);
   const { logout } = useLogout(setLoggedIn, setLoadingAuth, navigate);
 
   useEffect(() => {
@@ -55,13 +51,13 @@ export function AuthProvider({ children }) {
       if (loggedIn && !isAuthenticatedRoute) {
         console.log(
           "Logged in and not on authenticated route:",
-          location.pathname,
+          location.pathname
         );
         navigate(ROUTE_MAP.HOME);
       } else if (!loggedIn && isAuthenticatedRoute) {
         console.log(
           "Not logged in and on authenticated route:",
-          location.pathname,
+          location.pathname
         );
         navigate(ROUTE_MAP.LOGIN);
       }
@@ -81,6 +77,7 @@ export function AuthProvider({ children }) {
         loading: loginLoading || signupLoading,
         signup,
         userName,
+        setUserName,
         email,
       }}
     >

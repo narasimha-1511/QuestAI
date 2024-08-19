@@ -141,7 +141,7 @@ const Login = () => {
 
         <div className="mt-6 text-center text-sm text-gray-600">
           {isSignup ? "Already have an account? " : "Don't have an account? "}
-          <Link to={isSignup ? "/login" : "/signup"} className="text-blue-500">
+          <Link to={isSignup ? "/" : "/signup"} className="text-blue-500">
             {isSignup ? "Login" : "Create Account"}
           </Link>
         </div>

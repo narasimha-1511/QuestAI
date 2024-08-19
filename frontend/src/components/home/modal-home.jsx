@@ -20,6 +20,7 @@ const ModalHome = ({ isModalOpen, setIsModalOpen }) => {
     setProjectModelError("");
     await createNewProject(projectName);
     setIsLoading(false);
+    setProjectName("");
     setIsModalOpen(false);
   };
 

@@ -21,26 +21,26 @@ const HomePage = () => {
         </div>
       ) : projects.length == 0 ? (
         <NoProjects>
-          <Button
-            className="text-white bg-black hover:bg-black/80 flex items-center"
+          <button
+            className="text-white bg-black hover:bg-black/80 flex items-center h-[2.5rem] w-[15rem] flex justify-center items-center rounded-lg mt-8"
             onClick={() => setIsModalOpen(true)}
           >
             <img src={Add} alt="Add" className="w-5 h-5 mr-2" />
             Create a New Project
-          </Button>
+          </button>
         </NoProjects>
       ) : (
         <div className="h-screen px-[6rem] mt-8">
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-between items-center gap-4 w-full">
               <h1 className="text-3xl font-bold text-purple-600">Projects</h1>
-              <Button
-                className="text-white bg-black hover:bg-black/80 flex items-center"
+              <button
+                className="text-white bg-black hover:bg-black/80 flex items-center h-[2.5rem] w-[15rem] flex justify-center items-center rounded-lg mt-8"
                 onClick={() => setIsModalOpen(true)}
               >
                 <img src={Add} alt="Add" className="w-5 h-5 mr-2" />
                 Create a New Project
-              </Button>
+              </button>
             </div>
             <Projects projects={projects} />
           </div>
