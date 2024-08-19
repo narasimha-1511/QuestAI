@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { apiInstance } from '../utils/api-instance';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { apiInstance } from "../utils/api-instance";
+import { useNavigate } from "react-router-dom";
 
 const useLogin = (setLoggedIn) => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +9,7 @@ const useLogin = (setLoggedIn) => {
   const login = async (username, password) => {
     setLoading(true);
     try {
-      const response = await apiInstance.post('/api/auth/login', {
+      const response = await apiInstance.post("/api/auth/login", {
         email: username,
         password: password,
       });
@@ -19,10 +19,10 @@ const useLogin = (setLoggedIn) => {
       }
 
       setLoggedIn(true);
-      navigate('/');
+      navigate("/");
       return true;
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
       return error.message || "Login failed";
     } finally {
       setLoading(false);

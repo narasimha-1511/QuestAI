@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const apiInstance = axios.create({
-  baseURL: '/',
+  baseURL: "/",
   withCredentials: true,
   headers: {
-    'Content-Type': 'application/json',
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 export { apiInstance };

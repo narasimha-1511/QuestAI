@@ -6,9 +6,7 @@ function InputText({ placeholder, className = "", type = "text", ...props }) {
       <input
         type={type}
         placeholder={placeholder}
-        className={
-          `w-full px-4 py-4 mt-6 border bg-white rounded-lg ${className}`
-        }
+        className={`w-full px-4 py-4 mt-6 border bg-white rounded-lg ${className}`}
         {...props}
       />
     </div>

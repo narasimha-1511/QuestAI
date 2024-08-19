@@ -1,16 +1,15 @@
+import { useState } from "react";
+import { apiInstance } from "../utils/api-instance";
+import { useNavigate } from "react-router-dom";
 
-import { useState } from 'react';
-import { apiInstance } from '../utils/api-instance';
-import { useNavigate } from 'react-router-dom';
-
-const useSignup = (setLoggedIn) => {
+const useSignup = (setLoggedIn, setEmail, setUserName) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const signup = async (username, password, fullName) => {
     setLoading(true);
     try {
-      const response = await apiInstance.post('/api/auth/signup', {
+      const response = await apiInstance.post("/api/auth/signup", {
         fullName: fullName,
         email: username,
         password: password,
@@ -20,11 +19,13 @@ const useSignup = (setLoggedIn) => {
         throw new Error(response.data.error);
       }
 
+      setUserName(response.data.user.fullName);
+      setEmail(response.data.user.email);
       setLoggedIn(true);
-      navigate('/');
+      navigate("/home");
       return true;
     } catch (error) {
-      console.error('Signup failed:', error);
+      console.error("Signup failed:", error);
       return false;
     } finally {
       setLoading(false);
